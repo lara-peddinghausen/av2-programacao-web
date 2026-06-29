@@ -31,7 +31,7 @@ public class MatriculaController {
     @PostMapping
     @Transactional
     public void cadastrar(@RequestBody DadosCadastroMatricula dados) {
-        Aluno aluno = alunoRepository.getReferenceById(dados.alunoId().toString());
+        Aluno aluno = alunoRepository.getReferenceById(dados.alunoId());
         Professor professor = professorRepository.getReferenceById(dados.professorId());
         Matricula matricula = new Matricula(dados);
         matricula.setAluno(aluno);
@@ -47,7 +47,7 @@ public class MatriculaController {
     // ERRO 7: @PathVariable com nome "ids" não corresponde ao parâmetro {id} da URL
     @DeleteMapping("/{id}")
     @Transactional
-    public void excluir(@PathVariable Integer ids) {
-        repository.deleteById(ids);
+    public void excluir(@PathVariable Integer id) {
+        repository.deleteById(id);
     }
 }
