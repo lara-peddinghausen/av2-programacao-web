@@ -44,7 +44,7 @@ public class Professor {
             this.nome = dados.nome();
         }
         if (dados.email() != null) {
-            this.nome = dados.email(); // ERRO 6: deveria ser this.email = dados.email()
+            this.email = dados.email(); // ERRO 6: deveria ser this.email = dados.email()
         }
         if (dados.telefone() != null) {
             this.telefone = dados.telefone();
